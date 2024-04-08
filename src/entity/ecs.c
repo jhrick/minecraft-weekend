@@ -125,7 +125,7 @@ void _ecs_add_internal(struct Entity entity, enum ECSComponent component_id,
   void *component = ECSCL_GET(list, entity.index);
 
   // mark the component as used
-  assert(!(ECS_TAG(component) & ECS_TAG_USED));
+  assert(!(ECS_TAG(component) && ECS_TAG_USED));
   *ECS_PTAG(component) |= ECS_TAG_USED;
 
   if (value != NULL) {
