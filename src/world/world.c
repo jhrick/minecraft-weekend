@@ -26,9 +26,9 @@ static int _ftb_pcmp(const ivec3s **a, const ivec3s **b, ivec3s *center) {
 }
 
 // back-to-front ordering comparator
-static int _btf_cmp(const ivec3s *a, const ivec3s *b, ivec3s *center) {
+/*static int _btf_cmp(const ivec3s *a, const ivec3s *b, ivec3s *center) {
     return -(glms_ivec3_norm2(glms_ivec3_sub(*center, *a)) - glms_ivec3_norm2(glms_ivec3_sub(*center, *b)));
-}
+}*/
 
 // front-to-back ordering comparator
 static int _ftb_cmp(const ivec3s *a, const ivec3s *b, ivec3s *center) {

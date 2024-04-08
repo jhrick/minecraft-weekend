@@ -10,7 +10,7 @@
 // global state
 struct State state;
 
-void init() {
+void init(void) {
     block_init();
     state.window = &window;
     renderer_init(&state.renderer);
@@ -56,13 +56,13 @@ void init() {
     state.world.entity_view = player;
 }
 
-void destroy() {
+void destroy(void) {
     renderer_destroy(&state.renderer);
     world_destroy(&state.world);
     ui_destroy(&state.ui);
 }
 
-void tick() {
+void tick(void) {
     state.ticks++;
     world_tick(&state.world);
     ui_tick(&state.ui);
@@ -77,7 +77,7 @@ void tick() {
     }
 }
 
-void update() {
+void update(void) {
     renderer_update(&state.renderer);
     world_update(&state.world);
     ui_update(&state.ui);
@@ -93,7 +93,7 @@ void update() {
     }
 }
 
-void render() {
+void render(void) {
     renderer_prepare(&state.renderer, PASS_3D);
     world_render(&state.world);
 
